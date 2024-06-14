@@ -42,7 +42,7 @@ func VerifyAuthToken(tokenString, jwtKey string) (*JwtPayload, error) {
 
 	payload := new(JwtPayload)
 	if claims, ok := token.Claims.(jwt.MapClaims); ok {
-		payload.ID = fmt.Sprint(claims["id"])
+		payload.ID = fmt.Sprint(claims["user_id"])
 		payload.Role = fmt.Sprint(claims["role"])
 	}
 
